@@ -1,0 +1,46 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff176;
+  }
+  
+  .movieDetails {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .moviePoster {
+    margin-right: 30px;
+  }
+  
+  .moviePoster img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .movieInfo {
+    flex-grow: 1;
+  }
+  
+  .movieInfo h2 {
+    margin-bottom: 15px;
+  }
+  
+  .movieInfo p {
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+  
+  .genres {
+    margin-top: 15px;
+  }
+  
+  .genres span {
+    margin-right: 10px;
+    background-color: #8bc34a;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
