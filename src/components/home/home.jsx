@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import movieApi from '../services/movieapi';
 import styles from './home.module.css';
 
 const Home = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const fetchTrendingMovies = async () => {
@@ -24,11 +26,41 @@ const Home = () => {
     navigate(path);
   };
 
+  const handleSearchInputChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    // Przeniesienie do nowej ścieżki z parametrem wyszukiwania
+    navigate(`/search/${searchTerm}`);
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.navbar}>
-        <button onClick={() => handleNavigation('/')}><div>Home</div></button>
-        <button onClick={() => handleNavigation('/movies')}><div>Movies</div></button>
+        <button
+          onClick={() => handleNavigation('/')}
+          className={location.pathname === '/' ? styles.active : ''}
+        >
+          <div>Home</div>
+        </button>
+        <button
+          onClick={() => handleNavigation('/movies')}
+          className={location.pathname === '/movies' ? styles.active : ''}
+        >
+          <div>Movies</div>
+        </button>
+        {/* Dodaj pole wyszukiwania */}
+        <form onSubmit={handleSearchSubmit} className={styles.searchForm}>
+          <input
+            type="text"
+            placeholder="Search movies..."
+            value={searchTerm}
+            onChange={handleSearchInputChange}
+          />
+          <button type="submit">Search</button>
+        </form>
       </div>
       <div className={styles.trendingMovies}>
         <h2 className={styles.trendingHeader}>Trending Movies</h2>
@@ -46,3 +78,5 @@ const Home = () => {
     </div>
   );
 };
+
+export default Home;

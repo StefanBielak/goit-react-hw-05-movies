@@ -1,0 +1,25 @@
+.castContainer {
+    margin-top: 20px;
+  }
+  
+  .castList {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .castItem {
+    width: calc(25% - 20px);
+    margin: 10px;
+    text-align: center;
+  }
+  
+  .actorImage {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .castItem p {
+    margin: 10px;
+  }

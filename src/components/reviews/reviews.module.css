@@ -1,0 +1,17 @@
+.reviewsList {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .reviewItem {
+    margin-bottom: 20px;
+  }
+  
+  .author {
+    font-weight: bold;
+  }
+  
+  .content {
+    margin-top: 10px;
+    line-height: 1.4;
+  }

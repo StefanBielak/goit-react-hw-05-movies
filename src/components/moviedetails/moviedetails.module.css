@@ -1,46 +1,100 @@
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff176;
-  }
-  
-  .movieDetails {
-    display: flex;
-    align-items: flex-start;
-  }
-  
-  .moviePoster {
-    margin-right: 30px;
-  }
-  
-  .moviePoster img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-  
-  .movieInfo {
-    flex-grow: 1;
-  }
-  
-  .movieInfo h2 {
-    margin-bottom: 15px;
-  }
-  
-  .movieInfo p {
-    margin-bottom: 12px;
-    line-height: 1.4;
-  }
-  
-  .genres {
-    margin-top: 15px;
-  }
-  
-  .genres span {
-    margin-right: 10px;
-    background-color: #8bc34a;
-    color: white;
-    padding: 4px 10px;
-    border-radius: 4px;
-  }
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff176;
+}
+
+.movieDetails {
+  display: flex;
+  align-items: flex-start;
+}
+
+.moviePoster {
+  margin-right: 30px;
+}
+
+.moviePoster img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.movieInfo {
+  flex-grow: 1;
+}
+
+.movieInfo h2 {
+  margin-bottom: 15px;
+}
+
+.movieInfo p {
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.genres {
+  margin-top: 15px;
+}
+
+.genres span {
+  margin-right: 10px;
+  background-color: #8bc34a;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #8bc34a;
+  text-align: center;
+  box-shadow: 0px 2px 5px #8bc34a;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin-bottom: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 80px;
+  padding-right: 80px;
+  background-color: #8bc34a;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  border-radius: 8px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.navbar a:hover {
+  background-color: #689f38;
+}
+
+.content {
+  margin-top: 70px;
+}
+
+.additionalLinks {
+  margin-top: 20px;
+}
+
+.additionalLinks a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.additionalLinks a:hover {
+  color: #8bc34a;
+}
