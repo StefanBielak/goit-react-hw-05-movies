@@ -1,51 +1,32 @@
-const apiKey = 'fec326186e089e37ab730141e063b47b';
+import React, { useState, useEffect } from 'react';
+import movieApi from '../services/movieapi';
 
-const movieApi = {
-  getTrendingMovies: async () => {
-    try {
-      const response = await fetch(`https://api.themoviedb.org/3/trending/movie/day?api_key=${apiKey}`);
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      throw new Error('Error fetching trending movies:', error);
-    }
-  },
-  searchMovies: async (query) => {
-    try {
-      const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${query}`);
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      throw new Error('Error searching movies:', error);
-    }
-  },
-  getMovieDetails: async (movieId) => {
-    try {
-      const response = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`);
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      throw new Error('Error fetching movie details:', error);
-    }
-  },
-  getMovieCredits: async (movieId) => {
-    try {
-      const response = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}`);
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      throw new Error('Error fetching cast:', error);
-    }
-  },
-  getMovieReviews: async (movieId) => {
-    try {
-      const response = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=${apiKey}`);
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      throw new Error('Error fetching reviews:', error);
-    }
-  },
+const Movies = () => {
+  const [trendingMovies, setTrendingMovies] = useState([]);
+
+  useEffect(() => {
+    const fetchTrendingMovies = async () => {
+      try {
+        const data = await movieApi.getTrendingMovies();
+        setTrendingMovies(data.results);
+      } catch (error) {
+        console.error('Error fetching trending movies:', error);
+      }
+    };
+
+    fetchTrendingMovies();
+  }, []);
+
+  return (
+    <div>
+      <h2>Trending Movies</h2>
+      <ul>
+        {trendingMovies.map((movie) => (
+          <li key={movie.id}>{movie.title}</li>
+        ))}
+      </ul>
+    </div>
+  );
 };
 
-export default movieApi;
+export default Movies
