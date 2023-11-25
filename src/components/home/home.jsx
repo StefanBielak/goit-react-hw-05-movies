@@ -5,7 +5,6 @@ import styles from './home.module.css';
 
 const Home = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -26,16 +25,6 @@ const Home = () => {
     navigate(path);
   };
 
-  const handleSearchInputChange = (e) => {
-    setSearchTerm(e.target.value);
-  };
-
-  const handleSearchSubmit = (e) => {
-    e.preventDefault();
-    // Przeniesienie do nowej ścieżki z parametrem wyszukiwania
-    navigate(`/search/${searchTerm}`);
-  };
-
   return (
     <div className={styles.container}>
       <div className={styles.navbar}>
@@ -51,16 +40,6 @@ const Home = () => {
         >
           <div>Movies</div>
         </button>
-        {/* Dodaj pole wyszukiwania */}
-        <form onSubmit={handleSearchSubmit} className={styles.searchForm}>
-          <input
-            type="text"
-            placeholder="Search movies..."
-            value={searchTerm}
-            onChange={handleSearchInputChange}
-          />
-          <button type="submit">Search</button>
-        </form>
       </div>
       <div className={styles.trendingMovies}>
         <h2 className={styles.trendingHeader}>Trending Movies</h2>

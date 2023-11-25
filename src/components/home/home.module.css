@@ -85,26 +85,3 @@
   cursor: not-allowed;
   pointer-events: none;
 }
-
-/* Dodano style dla formularza wyszukiwania */
-.searchForm {
-  display: flex;
-  margin-top: 10px;
-}
-
-.searchForm input {
-  flex: 1;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-right: 5px;
-}
-
-.searchForm button {
-  background-color: #8bc34a;
-  color: white;
-  border: none;
-  padding: 8px;
-  border-radius: 4px;
-  cursor: pointer;
-}
