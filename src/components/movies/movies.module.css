@@ -1,0 +1,53 @@
+.moviesContainer {
+    max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #e7e4c5;
+  }
+  
+  .searchContainer {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .searchInput {
+    flex: 1;
+    padding: 8px;
+    margin-right: 10px;
+  }
+  
+  .searchButton {
+    padding: 8px 15px;
+    background-color: #689f38;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .searchResults {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .movieResult {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .movieResult:hover {
+    transform: scale(1.05);
+  }
+  
+  .movieImage {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .movieTitle {
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+  }
