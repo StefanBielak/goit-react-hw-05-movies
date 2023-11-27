@@ -9,7 +9,7 @@ const Reviews = lazy(() => import('./reviews/reviews'));
 
 const App = () => {
   return (
-    <Router basename="/goit-react-hw-05-movies">
+    <Router basename="goit-react-hw-05-movies">
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/" element={<Home />} />
