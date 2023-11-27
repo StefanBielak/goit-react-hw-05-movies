@@ -7,10 +7,9 @@ const MovieDetails = lazy(() => import('./moviedetails/moviedetails'));
 const Cast = lazy(() => import('./cast/cast'));
 const Reviews = lazy(() => import('./reviews/reviews'));
 
-
-export const App = () => {
+const App = () => {
   return (
-    <Router>
+    <Router basename="/goit-react-hw-05-movies">
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -24,3 +23,5 @@ export const App = () => {
     </Router>
   );
 };
+
+export default App;
