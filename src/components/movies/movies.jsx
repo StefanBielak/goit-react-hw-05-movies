@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import movieApi from '../services/movieapi';
-import styles from './movies.module.css'; // Załóż, że styles zawiera odpowiednie style CSS
+import styles from './movies.module.css';
 
 const Movies = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -18,12 +18,19 @@ const Movies = () => {
   };
 
   const handleMovieClick = (movieId) => {
-    // Przenoszenie użytkownika do strony szczegółów filmu po kliknięciu
     navigate(`/movies/${movieId}`);
   };
 
   return (
     <div className={styles.moviesContainer}>
+      <div className={styles.navbar}>
+        <Link to="/" className={styles.navButton}>
+          <div>Home</div>
+        </Link>
+        <div className={styles.navButtonDisabled}>
+          <div>Movies</div>
+        </div>
+      </div>
       <div className={styles.searchContainer}>
         <input
           type="text"

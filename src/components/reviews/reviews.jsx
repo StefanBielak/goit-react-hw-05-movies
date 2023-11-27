@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import movieApi from '../services/movieapi';
-import styles from './reviews.module.css'; // Dodano import stylów
+import styles from './reviews.module.css';
 
 const Reviews = () => {
   const { movieId } = useParams();
   const [reviews, setReviews] = useState([]);
+  const navigate = useNavigate();
+
+  const handleBack = () => {
+    navigate(`/movies/${movieId}`);
+  };
 
   useEffect(() => {
     const fetchReviews = async () => {
@@ -22,6 +27,17 @@ const Reviews = () => {
 
   return (
     <div>
+      <div className={styles.navbar}>
+        <Link to="/" className={styles.navButton}>
+          Home
+        </Link>
+        <button onClick={handleBack} className={styles.navButtonBack}>
+          Back
+        </button>
+        <div className={styles.navButtonDisabled}>
+          Reviews
+        </div>
+      </div>
       <h2>Reviews</h2>
       <ul className={styles.reviewsList}>
         {reviews.map((review) => (

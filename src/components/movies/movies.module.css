@@ -1,53 +1,87 @@
 .moviesContainer {
-    max-width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 40px;
   background-color: #e7e4c5;
-  }
-  
-  .searchContainer {
-    display: flex;
-    margin-bottom: 20px;
-  }
-  
-  .searchInput {
-    flex: 1;
-    padding: 8px;
-    margin-right: 10px;
-  }
-  
-  .searchButton {
-    padding: 8px 15px;
-    background-color: #689f38;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .searchResults {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-  }
-  
-  .movieResult {
-    cursor: pointer;
-    transition: transform 0.3s ease;
-  }
-  
-  .movieResult:hover {
-    transform: scale(1.05);
-  }
-  
-  .movieImage {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-  
-  .movieTitle {
-    margin-top: 8px;
-    font-size: 14px;
-    font-weight: bold;
-    text-align: center;
-  }
+}
+
+.searchContainer {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.searchInput {
+  flex: 1;
+  padding: 8px;
+  margin-right: 10px;
+}
+
+.searchButton {
+  padding: 8px 15px;
+  background-color: #689f38;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar {
+  display: flex;
+  background-color: #8bc34a;
+  padding: 10px;
+  box-shadow: 0px 2px 5px #8bc34a;
+}
+
+.navButton {
+  color: white;
+  text-decoration: none;
+  margin-right: 10px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  border-radius: 8px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.navButton:hover {
+  background-color: #689f38;
+}
+
+.navButtonDisabled {
+  color: rgb(23, 20, 219);
+  cursor: not-allowed;
+  pointer-events: none;
+  margin-right: 10px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.searchResults {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.movieResult {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.movieResult:hover {
+  transform: scale(1.05);
+}
+
+.movieImage {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.movieTitle {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}

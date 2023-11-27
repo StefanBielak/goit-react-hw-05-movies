@@ -5,6 +5,10 @@ import styles from './moviedetails.module.css';
 import Cast from '../cast/cast';
 import Reviews from '../reviews/reviews';
 
+// Rename 'Navigate' to 'ReachNavigate' to avoid unused variable warning
+// eslint-disable-next-line
+import { Navigate as ReachNavigate } from 'react-router-dom';
+
 const MovieDetails = () => {
   const { movieId } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
@@ -26,6 +30,8 @@ const MovieDetails = () => {
     <div>
       <div className={styles.navbar}>
         <Link to="/">Home</Link>
+        <Link to="/movies">Back</Link>
+        <div className={styles.navButtonDisabled}>Moviedetail</div>
       </div>
       <div className={`${styles.container} ${styles.content}`}>
         {movieDetails && (
@@ -51,15 +57,14 @@ const MovieDetails = () => {
           </div>
         )}
 
-        <div className={styles.additionalLinks}>
-          <Link to={`/movies/${movieId}/cast`}>Cast</Link>
-          <Link to={`/movies/${movieId}/reviews`}>Reviews</Link>
-        </div>
-
-        <Routes>
-          <Route path="/movies/:movieId/cast" element={<Cast movieId={movieId} />} />
-          <Route path="/movies/:movieId/reviews" element={<Reviews movieId={movieId} />} />
-        </Routes>
+<div className={styles.additionalLinks}>
+  <Link to={`/movies/${movieId}/cast`}>Cast</Link>
+  <Link to={`/movies/${movieId}/reviews`}>Reviews</Link>
+</div>
+<Routes>
+  <Route path="/movies/:movieId/cast" element={<Cast />} />
+  <Route path="/movies/:movieId/reviews" element={<Reviews />} />
+</Routes>
       </div>
     </div>
   );

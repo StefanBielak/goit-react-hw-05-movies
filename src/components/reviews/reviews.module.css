@@ -1,17 +1,73 @@
 .reviewsList {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .reviewItem {
-    margin-bottom: 20px;
-  }
-  
-  .author {
-    font-weight: bold;
-  }
-  
-  .content {
-    margin-top: 10px;
-    line-height: 1.4;
-  }
+  list-style: none;
+  padding: 0;
+  margin: 40px;
+}
+
+.reviewItem {
+  margin-bottom: 20px;
+}
+
+.author {
+  font-weight: bold;
+}
+
+.content {
+  margin-top: 40px;
+  line-height: 1.4;
+}
+
+/* Nowe style dla nawigacji */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #8bc34a;
+  text-align: center;
+  box-shadow: 0px 2px 5px #8bc34a;
+}
+
+.navButton {
+  color: white;
+  text-decoration: none;
+  margin-right: 10px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  border-radius: 8px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.navButton:hover {
+  background-color: #689f38;
+}
+
+.navButtonDisabled {
+  color: rgb(23, 20, 219);
+  cursor: not-allowed;
+  pointer-events: none;
+  margin-right: 10px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+}.navButtonBack {
+  margin-right: 10px;
+  padding: 10px;
+  background-color: #8bc34a;
+  box-shadow: 0px 2px 5px #8bc34a;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.navButtonBack:hover {
+  background-color: #689f38;
+}
